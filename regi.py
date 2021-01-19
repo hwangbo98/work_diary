@@ -96,12 +96,12 @@ def leave_office_excel(day_time_name_info) :
 			leave_time = line[0] + " "+ line[2]
 			go_strToint = datetime.strptime(go_time, "%Y-%m-%d %H:%M:%S")
 			leave_strToint = datetime.strptime(leave_time, "%Y-%m-%d %H:%M:%S")
-			print(go_strToint)
-			print(leave_strToint)
+			#print(go_strToint)
+			#print(leave_strToint)
 			sub_time = leave_strToint - go_strToint
-			print(sub_time)
+			#print(sub_time)
 			line[3] = sub_time.total_seconds()/60
-			math.trunc(line[3]) #trunc is waste of a decimal num
+			line[3] = math.trunc(line[3]) #trunc is waste of a decimal num
 		lines.append(line)
 	f = open(file_name,'w')
 	wr = csv.writer(f)
@@ -187,7 +187,7 @@ else :
 	with open('account.pkl', 'rb') as fin :
 		id_pw = pickle.load(fin)
 print("You must choice the number, What do you want? ")
-print(id_pw)
+print(id_pw.keys())
 print("If you want to quit or wrong something, type quit() and you will be OK ")
 choice = input("1.register 2.login 3.logout " )
 if choice == "1" :
@@ -195,7 +195,7 @@ if choice == "1" :
 elif choice == "2" :
 	who_am_i = login(id_pw)
 	if who_am_i == 'admin' :
-		answer_admin = int(input("1. delete member 2. print out the member's monthly work record. 3. total time of specific member  "))
+		answer_admin = int(input("1. delete member 2. print out the member's monthly work record. 3. total time of specific member?  "))
 		if answer_admin == 1 :
 			while(1) :
 				name_delete = input("which account do you want to delete? ")
