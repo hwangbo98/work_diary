@@ -67,7 +67,7 @@ def time_service(id_info) :
 	
 	split_day_time.append(get_month[:3]) #get month name
 	print(split_day_time[2])
-	print(split_day_time[3])
+	#print(split_day_time[3])
 	return split_day_time
 
 def go_work_excel(day_time_name_info) :
@@ -187,7 +187,7 @@ else :
 	with open('account.pkl', 'rb') as fin :
 		id_pw = pickle.load(fin)
 print("You must choice the number, What do you want? ")
-print(id_pw.keys())
+#print(id_pw.keys())
 print("If you want to quit or wrong something, type quit() and you will be OK ")
 choice = input("1.register 2.login 3.logout " )
 if choice == "1" :
