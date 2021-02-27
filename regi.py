@@ -101,7 +101,7 @@ def leave_office_excel(day_time_name_info) :
 			sub_time = leave_strToint - go_strToint
 			#print(sub_time)
 			line[3] = sub_time.total_seconds()/60
-			line[3] = math.trunc(line[3]) #trunc is waste of a decimal num
+			line[3] =  round(line[3]) #trunc is waste of a decimal num
 		lines.append(line)
 	f = open(file_name,'w')
 	wr = csv.writer(f)
@@ -142,8 +142,8 @@ def total_time(name_worker) :
 				times.append(line[3])
 		count += 1
 
-	times = list(map(float,times))
-	print("name_worker work time : %d"%(sum(map(float,times))))	
+	times = list(map(int,times))
+	print("name_worker work time : %d"%(sum(map(int,times))))	
 	print(times)
 	
 '''def go_work_excel(day_time_name_info) : #it is defined go to work example
